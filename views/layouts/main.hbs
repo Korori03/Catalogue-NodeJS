@@ -1,0 +1,149 @@
+<html lang="en" data-theme="dark" style="color-scheme: dark;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Catalogue | Video Game Collection</title>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000000">
+
+
+    <meta name="description" content="Catalogue to help organize your collection.">
+    <meta name="robots" content="noodp, noydir, max-image-preview:large">
+    <meta name="thumbnail" content="/img/hltb_brand2.png">
+    <meta property="twitter:url" content="https://mycatalogue.app">
+    <meta property="og:url" content="https://mycatalogue.app">
+    <meta property="og:title" content="My Catalogue | Video Game Collection">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/hltb_brand2.png">
+    <meta property="og:description" content="Catalogue to help organize your collection.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="Catalogue to help organize your collection.">
+    <meta property="twitter:domain" content="amidenault.com">
+    <meta name="twitter:site" content="@AmiDenault">
+    <meta name="twitter:image" content="/img/hltb_brand2.png">
+    <link rel="canonical" href="https://mycatalogue.app">
+    <meta name="next-head-count" content="19">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+    {{!--
+    <link rel="manifest" href="/manifest.json"> --}}
+    <link rel="preconnect" href="https://mycatalogue.app/">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="screen"
+        rel="stylesheet" type="text/css">
+
+    <link href="/css/default.css?v=1.21" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        let toggleSearch = false;
+        let toggleMobile = false;
+        document.addEventListener('click', (e) => {
+            let elementClass = e.target.className;
+            if (elementClass !== '') {
+                let result = elementClass.includes("btnSearch");
+                if (result) {
+                    if (toggleSearch) {
+                        document.getElementById('search_box').style = "display: none;";
+                        toggleSearch = false;
+                    }
+                    else {
+                        document.getElementById('search_box').style = "display: block;";
+                        toggleSearch = true;
+                    }
+                }
+
+                let resultm = elementClass.includes("mobile_bars");
+                let resultb1 = elementClass.includes("bar1");
+                let resultb2 = elementClass.includes("bar2");
+                let resultb3 = elementClass.includes("bar3");
+                if (resultm || resultb1 || resultb2 || resultb3) {
+                    if (toggleMobile) {
+                        document.getElementById('mobile_bars').classList.remove("change");
+                        document.querySelector('.navList').style = "display: none;";
+                        document.querySelector('.navIcon').style = "display: block;";
+                        document.querySelector('.navLogin').style = "display: none;";
+                        document.querySelector('.nav_title').style = "display: block;";
+                        document.querySelector('.searchBox').style = "display: block;";
+                        document.querySelector('.layout').style = "display: block;";
+                        document.querySelector('.navHeader').style = "height: unset;";
+                        toggleMobile = false;
+                    }
+                    else {
+                        document.getElementById('mobile_bars').classList.add("change");
+                        document.querySelector('.navList').style = "display: block;";
+                        document.querySelector('.navIcon').style = "display: none;";
+                        document.querySelector('.navLogin').style = "display: block;";
+                        document.querySelector('.nav_title').style = "display: none;";
+                        document.querySelector('.searchBox').style = "display: none;";
+                        document.querySelector('.layout').style = "display: none;";
+                        document.querySelector('.navHeader').style = "height: 100%;";
+                        toggleMobile = true;
+                    }
+                }
+
+
+            }
+        });
+
+
+    </script>
+    <div class="layout_container">
+        <header class="navHeader">
+            <nav class="navigation">
+
+                <a class="navIcon" aria-label="mycatalogue" href="/"></a>
+                <ul class="navList">
+                    <li><a href="/games">Games</a></li>
+                    <li><a href="/books">Books</a></li>
+                    <li><a href="/videos">Videos</a></li>
+                    <li><a href="/music">Music</a></li>
+                    <li><a href="/tcg">TCG</a></li>
+                    <li><a href="/figures">Figures</a></li>
+                </ul>
+                <ul class="navLogin">
+                    <li><a class="text_primary" href="/login">Login</a></li>
+                </ul>
+                <h1 class="nav_title">Catalogue System</h1>
+                <div class="searchBox">
+                    <input class="txtSearch back_form" aria-label="Search" tabindex="2" type="text"
+                        placeholder="Search In Your Collection..." autocomplete="off" value="">
+                </div>
+            </nav>
+        </header>
+        <div class="back_secondary center"></div>
+        <main class="layout">
+            <div>
+                <div class="contain_out back_black">
+                    <div class="contain_in index_container">
+                        {{{body}}}
+                    </div>
+                </div>
+            </div>
+        </main>
+        {{!-- <footer class="footer back_primary">
+            <div class="footer_inner"></div>
+        </footer> --}}
+    </div>
+    <div class="mobile_bars_background">
+        <div class="mobile_bars" id="mobile_bars">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

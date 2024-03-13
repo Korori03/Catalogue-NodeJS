@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-10">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item "><a href="/{{url breadcrumbs.main}}">{{ucwords breadcrumbs.main}} </a></li>
+      <li class="breadcrumb-item "><a href="/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}">{{ucwords
+          breadcrumbs.sub}} </a></li>
+  {{#if breadcrumbs.nestedsub}}
+            <li class="breadcrumb-item active"><a
+                    href="/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}/{{url breadcrumbs.nestedsub}}">{{ucwords
+                    breadcrumbs.nestedsub}}</a></li>
+{{/if}}
+    </ol>
+    </nav>
+  </div>
+  <div class="col-2 d-flex justify-content-end">
+    <a href="/adduser" type="button" class="btn btn-primary align-self-center">+</a>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">region</th>
+      <th scope="col">usa</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each data}}
+
+      {{#if this.nestedsub}}
+              <tr onclick="location.href='/{{url this.main}}/{{url this.sub}}/{{url this.nestedsub}}/{{{this.id}}}/view';">       
+      {{else}} 
+      <tr onclick="location.href='/{{url this.main}}/{{url this.sub}}/{{{this.id}}}/view';">             
+      {{/if}}
+    
+        <td>{{this.name}}</td>
+        <td>{{this.region}}</td>
+        <td>{{this.finished}}</td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>

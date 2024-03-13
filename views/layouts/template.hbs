@@ -1,0 +1,241 @@
+<div class="content_50">
+    {{#if breadcrumbs}}
+    <button class="btnGreyBorder back_blue center shadow_box" style="width: 49%;">Games</button>
+    <button class="btnGreyBorder back_secondary center shadow_box" style="width: 49%;">Member
+        Collections</button>
+        {{/if}}
+    <div class="clear"></div>
+</div>
+
+<div class="content_50">
+    <button class="btnWhiteBorder back_form shadow_box btnSearch" style="float:right">Search
+        Options</button>
+</div>
+<div class="clear"></div>
+<div style="display: none;" class="search_box" id="search_box">
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Platform</h5>
+            <select aria-label="Platform" style="width: 100%;" name="search_platform" autocomplete="off"
+                class="form_select back_form">
+                <option value="" selected="">All Platforms</option>
+                <optgroup label="Popular Platforms">
+                    <option value="Nintendo 3DS">Nintendo 3DS</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="PlayStation 3">PlayStation 3</option>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="PlayStation 5">PlayStation 5</option>
+                    <option value="PlayStation Now">PlayStation Now</option>
+                    <option value="Xbox 360">Xbox 360</option>
+                    <option value="Xbox One">Xbox One</option>
+                    <option value="Xbox Series X/S">Xbox Series X/S</option>
+                    <option value="Wii U">Wii U</option>
+                </optgroup>
+                <optgroup label="All Platforms">
+                    <option value="3DO">3DO</option>
+                    <option value="Acorn Archimedes">Acorn Archimedes</option>
+                    <option value="Amiga">Amiga</option>
+                    <option value="Amiga CD32">Amiga CD32</option>
+                    <option value="Amstrad CPC">Amstrad CPC</option>
+                    <option value="Apple II">Apple II</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="Atari 2600">Atari 2600</option>
+                    <option value="Atari 5200">Atari 5200</option>
+                    <option value="Atari 7800">Atari 7800</option>
+                    <option value="Atari 8-bit Family">Atari 8-bit Family</option>
+                    <option value="Atari Jaguar">Atari Jaguar</option>
+                    <option value="Atari Jaguar CD">Atari Jaguar CD</option>
+                    <option value="Atari Lynx">Atari Lynx</option>
+                    <option value="Atari ST">Atari ST</option>
+                    <option value="ColecoVision">ColecoVision</option>
+                    <option value="Commodore 64">Commodore 64</option>
+                    <option value="Commodore PET">Commodore PET</option>
+                    <option value="Commodore VIC-20">Commodore VIC-20</option>
+                    <option value="Dreamcast">Dreamcast</option>
+                    <option value="Game Boy">Game Boy</option>
+                    <option value="Game Boy Advance">Game Boy Advance</option>
+                    <option value="Game Boy Color">Game Boy Color</option>
+                    <option value="Intellivision">Intellivision</option>
+                    <option value="MSX">MSX</option>
+                    <option value="N-Gage">N-Gage</option>
+                    <option value="NEC PC-88">NEC PC-88</option>
+                    <option value="NEC PC-98">NEC PC-98</option>
+                    <option value="NEC PC-FX">NEC PC-FX</option>
+                    <option value="Neo Geo">Neo Geo</option>
+                    <option value="Neo Geo CD">Neo Geo CD</option>
+                    <option value="Neo Geo Pocket">Neo Geo Pocket</option>
+                    <option value="NES">NES</option>
+                    <option value="Nintendo 3DS">Nintendo 3DS</option>
+                    <option value="Nintendo 64">Nintendo 64</option>
+                    <option value="Nintendo DS">Nintendo DS</option>
+                    <option value="Nintendo GameCube">Nintendo GameCube</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="Odyssey">Odyssey</option>
+                    <option value="Odyssey 2">Odyssey 2</option>
+                    <option value="Philips CD-i">Philips CD-i</option>
+                    <option value="Playdate">Playdate</option>
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="PlayStation 2">PlayStation 2</option>
+                    <option value="PlayStation 3">PlayStation 3</option>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="PlayStation 5">PlayStation 5</option>
+                    <option value="PlayStation Mobile">PlayStation Mobile</option>
+                    <option value="PlayStation Portable">PlayStation Portable</option>
+                    <option value="PlayStation Vita">PlayStation Vita</option>
+                    <option value="Sega 32X">Sega 32X</option>
+                    <option value="Sega CD">Sega CD</option>
+                    <option value="Sega Game Gear">Sega Game Gear</option>
+                    <option value="Sega Master System">Sega Master System</option>
+                    <option value="Sega Mega Drive/Genesis">Sega Mega Drive/Genesis</option>
+                    <option value="Sega Pico">Sega Pico</option>
+                    <option value="Sega Saturn">Sega Saturn</option>
+                    <option value="SG-1000">SG-1000</option>
+                    <option value="Sharp X1">Sharp X1</option>
+                    <option value="Sharp X68000">Sharp X68000</option>
+                    <option value="Super Nintendo">Super Nintendo</option>
+                    <option value="Tiger Handheld">Tiger Handheld</option>
+                    <option value="TurboGrafx-16">TurboGrafx-16</option>
+                    <option value="TurboGrafx-CD">TurboGrafx-CD</option>
+                    <option value="Virtual Boy">Virtual Boy</option>
+                    <option value="Wii">Wii</option>
+                    <option value="Wii U">Wii U</option>
+                    <option value="Windows Phone">Windows Phone</option>
+                    <option value="WonderSwan">WonderSwan</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Xbox 360">Xbox 360</option>
+                    <option value="Xbox One">Xbox One</option>
+                    <option value="Xbox Series X/S">Xbox Series X/S</option>
+                    <option value="Zeebo">Zeebo</option>
+                    <option value="ZX Spectrum">ZX Spectrum</option>
+                    <option value="ZX81">ZX81</option>
+                </optgroup>
+            </select>
+            <h5 class="left">Sort By</h5>
+            <select class="form_select back_form" style="width: 100%;">
+                <option value="name">Name</option>
+                <option value="comp">Finished</option>
+                <option value="averagea">Region</option>
+                <option value="release">Release Date</option>
+            </select>
+        </div>
+    </div>
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Genre</h5>
+            <select name="search_genre" style="width: 100%;" class="form_select back_form">
+                <option value="">All</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Arcade">Arcade</option>
+                <option value="Battle Arena">Battle Arena</option>
+                <option value="Beat em Up">Beat em Up</option>
+                <option value="Board Game">Board Game</option>
+                <option value="Breakout">Breakout</option>
+                <option value="Card Game">Card Game</option>
+                <option value="City-Building">City-Building</option>
+                <option value="Compilation">Compilation</option>
+                <option value="Educational">Educational</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Flight">Flight</option>
+                <option value="Full Motion Video (FMV)">Full Motion Video (FMV)</option>
+                <option value="Hack and Slash">Hack and Slash</option>
+                <option value="Hidden Object">Hidden Object</option>
+                <option value="Horror">Horror</option>
+                <option value="Interactive Art">Interactive Art</option>
+                <option value="Management">Management</option>
+                <option value="Music/Rhythm">Music/Rhythm</option>
+                <option value="Open World">Open World</option>
+                <option value="Party">Party</option>
+                <option value="Pinball">Pinball</option>
+                <option value="Platform">Platform</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Racing/Driving">Racing/Driving</option>
+                <option value="Roguelike">Roguelike</option>
+                <option value="Role-Playing">Role-Playing</option>
+                <option value="Sandbox">Sandbox</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Simulation">Simulation</option>
+                <option value="Social">Social</option>
+                <option value="Sports">Sports</option>
+                <option value="Stealth">Stealth</option>
+                <option value="Strategy/Tactical">Strategy/Tactical</option>
+                <option value="Survival">Survival</option>
+                <option value="Tower Defense">Tower Defense</option>
+                <option value="Trivia">Trivia</option>
+                <option value="Vehicular Combat">Vehicular Combat</option>
+                <option value="Visual Novel">Visual Novel</option>
+            </select>
+            <div class="clear"></div>
+            <h5 class="left">Release Year</h5>
+            <select name="search_year" style="width: 100%;" class="form_select back_form form_select back_form"
+                data-form-type="date,year">
+                <option value="">All </option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+                <option value="1994">1994</option>
+                <option value="1993">1993</option>
+                <option value="1992">1992</option>
+                <option value="1991">1991</option>
+                <option value="1990">1990</option>
+                <option value="1989">1989</option>
+                <option value="1988">1988</option>
+                <option value="1987">1987</option>
+                <option value="1986">1986</option>
+                <option value="1985">1985</option>
+                <option value="1984">1984</option>
+                <option value="1983">1983</option>
+                <option value="1982">1982</option>
+                <option value="1981">1981</option>
+                <option value="1980">1980</option>
+                <option value="1979">1979</option>
+                <option value="1978">1978</option>
+                <option value="1977">1977</option>
+                <option value="1976">1976</option>
+                <option value="1975">1975</option>
+                <option value="1974">1974</option>
+                <option value="1973">1973</option>
+                <option value="1972">1972</option>
+                <option value="1971">1971</option>
+                <option value="1970">1970</option>
+                <option value="1969">1969</option>
+                <option value="1968">1968</option>
+                <option value="1967">1967</option>
+                <option value="1966">1966</option>
+                <option value="1965">1965</option>
+            </select>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="content_100">
+    {{{body}}}
+</div>

@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-10">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item "><a href="/{{url breadcrumbs.main}}">{{ucwords breadcrumbs.main}} </a></li>
+      <li class="breadcrumb-item "><a href="/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}">{{ucwords
+          breadcrumbs.sub}} </a></li>
+    </ol>
+  </div>
+  <div class="col-2 d-flex justify-content-end">
+    <a href="/adduser" type="button" class="btn btn-primary align-self-center">+</a>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Brand</th>
+      <th scope="col">asia</th>
+      <th scope="col">usa</th>
+      <th scope="col">japan</th>
+      <th scope="col">korea</th>
+      <th scope="col">australia</th>
+      <th scope="col">finished</th>
+      <th scope="col">price</th>
+      <th scope="col">total</th>
+      <th scope="col">percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each data}}
+
+    <tr onclick="location.href='/games/{{{url this.brand}}}/{{{url this.system}}}';">
+      <td>{{this.system}}</td>
+      <td>{{this.region.asia}}</td>
+      <td>{{this.region.usa}}</td>
+      <td>{{this.region.japan}}</td>
+      <td>{{this.region.korea}}</td>
+      <td>{{this.region.australia}}</td>
+      <td>{{this.finished}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.total}}</td>
+      <td>{{this.percentage}}</td>
+
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>

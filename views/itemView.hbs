@@ -1,0 +1,247 @@
+<div class="content_50">
+    <input type="hidden" value="{{pageObject}}" name="objectType" id="objectType" />
+    {{#if breadcrumbs}}
+        {{#if breadcrumbs.sub}}
+        <button class="btnGreyBorder back_blue center shadow_box" style="width: 49%;"
+            onclick="location.href='/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}';">{{ucwords
+            breadcrumbs.sub}}</button>
+        {{/if}}
+        {{#if breadcrumbs.nestedsub}}
+        <button class="btnGreyBorder back_blue center shadow_box" style="width: 49%;"
+            onclick="location.href='/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}/{{url breadcrumbs.nestedsub}}';">{{ucwords
+            breadcrumbs.nestedsub}}</button>
+        {{/if}}
+    {{/if}}
+    <div class="clear"></div>
+</div>
+<div class="content_50">
+    <button class="btnGreyBorder back_form shadow_box " style="width: 49%;float:left">Member Collections</button>
+    <button class="btnGreyBorder back_form shadow_box btnSearch" style="width: 49%;float:right">Search Options</button>
+</div>
+<div class="clear"></div>
+<div style="display: none;" class="search_box">
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Platform</h5>
+            <select aria-label="Section" style="width: 100%;" name="search_section" autocomplete="off" class="form_select back_form">
+               {{{searchOptions}}}
+            </select>
+            <h5 class="left">Sort By</h5>
+            <select class="form_select back_form" style="width: 100%;">
+                <option value="name">Name</option>
+                <option value="comp">Finished</option>
+                <option value="averagea">Region</option>
+                <option value="release">Release Date</option>
+                {{#ifEquals pageObject 'games'}}
+                    <option value="playmode">Playmode</option>
+                {{/ifEquals}}   
+            </select>
+        </div>
+    </div>
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Genre</h5>
+             <!--Genre-->
+            <select name="search_genre" style="width: 100%;" class="form_select back_form">
+                <option value="">All</option>
+                 {{#each searchGenre}}
+                    <option value="{{ucwords this.genre}}">{{ucwords this.genre}}</option>
+                {{/each}}
+            </select>
+
+            <!--END OF GENRE-->
+            <div class="clear"></div>
+            <h5 class="left">Release Year</h5>
+            <select name="search_year" style="width: 100%;" class="form_select back_form form_select back_form"
+                data-form-type="date,year">
+                <option value="">All </option>
+                {{#each searchYears}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+<div class="content_100">
+    <div class="in">
+        <div class="search_list">
+            <main class="Layout_main__NgJgX">
+                <div class="contain_out">
+                    <div class="contain_in itemBackgroundImage"
+                        style="background-image: radial-gradient(circle at 50% center, rgba(36, 36, 36, 0.85), rgba(36, 36, 36, 0.95) 75%, rgb(36, 36, 36) 100%), url(&quot;{{{data.cover_img}}}&quot;);">
+                        <div class="itemBlur">
+                            <div class="itemSubHeader">
+                                <div class="itemHeader shadow_text">
+                                    {{data.name}} {{getYear data.release_date}}</div>
+                            </div>
+                            <div class="itemImage desktop_hide"><img alt="{{url data.name}}" src="{{{data.cover_img}}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contain_out">
+                    <div class="contain_in">
+                        <div class="content_25_static">
+                            <div class="itemMobileBar">
+                                <div class="itemMobileImg mobile_hide"><img alt="{{url data.name}}"
+                                        src="{{{data.cover_img}}}">
+                                </div>
+                                <div class="mobile_clear"></div>
+                                <div class="content_break"></div>
+                            </div>
+                        </div>
+                        <div class="content_75_static">
+
+                            <div class="in back_primary shadow_box">
+                                <div class="row-item">
+
+                                    <div class="featured-item-meta">
+
+                                        <ul class="item-info" style="    height: 75px;">
+                                            <li>
+                                                <div><strong style="font-weight: 600;">Release Date:</strong>
+                                                </div>
+                                                <div style="margin-top:3px;">
+                                                    {{data.release_date}}</div>
+                                            </li>
+                                            <li>
+                                                <div><strong style="font-weight: 600;">Region:</strong>
+                                                </div>
+
+                                                <div style="margin-top:5px;">
+                                                    <div class="{{data.region_icon}}"></div>
+                                                    <div style="padding-left: 45px;">{{ucwords
+                                                        data.region}}</div>
+                                                    <br>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="item-info">
+                                            <li>
+                                                <div><strong style="font-weight: 600;">Publisher:</strong>
+                                                </div>
+                                                <div class="wrapper"
+                                                    style="background-color: #fff;border-radius: .1875em;box-shadow: none;">
+                                                    <div id="multi-select">
+                                                        <div class="multiselect-wrapper">
+                                                            <div class="tag-list-wrapper" style="padding: .5em;">
+                                                                <div class="tag-input-genre">
+
+                                                                    {{{createTag data.publisher}}}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><strong style="font-weight: 600;">{{data.secondary_type}}</strong>
+                                                </div>
+                                                <div class="wrapper"
+                                                    style="background-color: #fff;border-radius: .1875em;box-shadow: none;">
+                                                    <div id="multi-select">
+                                                        <div class="multiselect-wrapper">
+                                                            <div class="tag-list-wrapper" style="padding: .5em;">
+                                                                <div class="tag-input-genre">
+                                                                    {{{createTag data.secondary}}}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <ul class="item-info">
+                                            <li style="flex: 0 0 100%;">
+                                                <div>
+                                                    <strong style="font-weight: 600;">Genre:</strong>
+                                                </div>
+                                                <div class="wrapper"
+                                                    style="background-color: #fff;border-radius: .1875em;box-shadow: none;float:left;">
+                                                    <div id="multi-select">
+                                                        <div class="multiselect-wrapper">
+                                                            <div class="tag-list-wrapper" style="padding: .5em; ">
+                                                                {{{createTag data.genre}}}
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="item-info">
+                                            <li style="flex: 0 0 50%;">
+                                                <div>
+                                                    <strong style="font-weight: 600;">Price:</strong>
+                                                </div>
+                                                <div class="wrapper"
+                                                    style="background-color: #fff;border-radius: .1875em;box-shadow: none;">
+                                                    <div id="multi-select">
+                                                        <div class="multiselect-wrapper">
+                                                            <div class="tag-list-wrapper" style="padding: .5em;">
+                                                                <div class="tag-input-genre">
+                                                                    {{data.price}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li style="flex: 0 0 50%;">
+                                                <div><strong style="font-weight: 600;">Purchase
+                                                        Date:</strong></div>
+                                                <div class="wrapper"
+                                                    style="background-color: #fff;border-radius: .1875em;box-shadow: none;">
+                                                    <div id="multi-select">
+                                                        <div class="multiselect-wrapper">
+                                                            <div class="tag-list-wrapper" style="padding: .5em;">
+                                                                <div class="tag-input-genre">
+                                                                    {{data.purchase_date}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {{#if dataReview.rating}}
+                            <div class="in back_primary shadow_box" style="    margin-top: 15px;">
+                                <div style="position:relative;">
+                                    <span class="ribbon2">
+                                        <ul class="mobile_rating">
+                                            <li style="font-size:20px;">
+                                                <fieldset class="rating-static">
+                                                    {{{getRating dataReview.rating}}}
+                                                </fieldset>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                                <h1 style="margin: 15px 5px;">Review</h1>
+                                <div style="margin-top:7%;">
+                                    {{dataReview.review}}
+                                </div>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </main>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+

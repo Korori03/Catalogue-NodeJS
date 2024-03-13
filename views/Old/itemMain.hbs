@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-10">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a href="/{{url breadcrumbs.main}}">{{ucwords breadcrumbs.main}} </a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="col-2 d-flex justify-content-end">
+        <a href="/adduser" type="button" class="btn btn-primary align-self-center">+</a>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Brand</th>
+            <th scope="col">asia</th>
+            <th scope="col">usa</th>
+            <th scope="col">japan</th>
+            <th scope="col">korea</th>
+            <th scope="col">australia</th>
+            <th scope="col">finished</th>
+            <th scope="col">price</th>
+            <th scope="col">total</th>
+            <th scope="col">percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr onclick="location.href='/{{url this.main}}/{{{url this.name}}}';">
+            <td>{{this.name}}</td>
+            <td>{{this.region.asia}}</td>
+            <td>{{this.region.usa}}</td>
+            <td>{{this.region.japan}}</td>
+            <td>{{this.region.korea}}</td>
+            <td>{{this.region.australia}}</td>
+            <td>{{this.finished}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.total}}</td>
+            <td>{{this.percentage}}</td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

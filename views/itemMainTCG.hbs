@@ -1,0 +1,121 @@
+<div class="content_50">
+    <input type="hidden" value="{{pageObject}}" name="objectType" id="objectType" />
+   {{#if breadcrumbs}}
+       
+        {{#if breadcrumbs.sub}}
+        <button class="btnGreyBorder back_blue center shadow_box" style="width: 49%;" onclick="location.href='/{{url breadcrumbs.main}}/{{url breadcrumbs.sub}}';">{{ucwords breadcrumbs.sub}}</button>
+        {{/if}}
+    {{/if}} 
+    <div class="clear"></div>
+</div>
+<div class="content_50">
+   <button class="btnGreyBorder back_form shadow_box " style="width: 49%;float:left" >Member Collections</button>
+    <button class="btnGreyBorder back_form shadow_box btnSearch" style="width: 49%;float:right" >Search Options</button>
+</div>
+<div class="clear"></div>
+<div style="display: none;" class="search_box" id="search_box">
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+
+            <!--Platform-->
+            <h5 class="left">Platform</h5>
+            <select aria-label="Section" style="width: 100%;" name="search_section" autocomplete="off" class="form_select back_form">
+                {{{searchOptions}}}
+            </select>
+
+            <!--END OF PLATFORM-->
+            <h5 class="left">Sort By</h5>
+            <select class="form_select back_form" style="width: 100%;">
+                <option value="name">Name</option>
+                <option value="comp">Finished</option>
+                <option value="averagea">Region</option>
+                <option value="release">Release Date</option>
+            </select>
+        </div>
+    </div>
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Rarity</h5>
+
+            <!--Genre-->
+            <select name="search_genre" style="width: 100%;" class="form_select back_form">
+                <option value="">All</option>
+                 {{#each searchGenre}}
+                    <option value="{{ucwords this.genre}}">{{ucwords this.genre}}</option>
+                {{/each}}
+            </select>
+
+            <!--END OF GENRE-->
+            <div class="clear"></div>
+            <h5 class="left">Release Year</h5>
+            <select name="search_year" style="width: 100%;" class="form_select back_form form_select back_form"
+                data-form-type="date,year">
+                <option value="">All </option>
+                {{#each searchYears}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="content_100">
+    <div class="in">
+        <h1 class="text_orange">TCG Collection</h1>
+        <div class="search_list">
+            <ul>
+               
+                {{#each data}}
+                {{#if this.brand}}
+                <li class="back_darkish Card"
+                    onclick="location.href='/{{url this.main}}/{{url this.brand}}/{{url this.abbreviation}}';"
+                    style="background-image: linear-gradient(rgb(31, 31, 31), rgba(31, 31, 31, 0.85)), url(&quot/img/backimg.png&quot;);">
+                    {{else}}
+                <li class="back_darkish Card" onclick="location.href='/{{url this.main}}/{{{url this.url}}}';"
+                    style="background-image: linear-gradient(rgb(31, 31, 31), rgba(31, 31, 31, 0.85)), url(&quot/img/backimg.png&quot;);">
+                    {{/if}}
+
+                    <div class="Card_Blur">
+                        <div class="Card_Details" style="margin-left: 0px;">
+                            <h3> 
+                                <div style="display:inline;">
+                                <img class="symbol" src="{{this.image_symbol}}" style="margin-right:10px;background-color:#fff;display:inline;"/></div>
+                                <a class="text_white" title="Games Grand Total" href="#">{{this.name}}</a> </h3>
+                            <div class="Card_Detail_Block">
+                                
+                                <div class="Card_List_Item text_white shadow_text">
+                                        
+                                        <div style="margin-top: 10px;margin-left: 50px; ">
+                                           
+                                        </div>
+                                    </div>
+                                <div>
+                                    <div class="Card_List_Item center time_70">
+                                            Own: {{this.own}}
+                                    </div>
+                                    <div class="Card_List_Item center time_100">
+                                        Total: {{this.total}}
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="progress_bar">
+                                <div role="progressbar" style="width: {{this.percentage}}%;" aria-valuenow="3"
+                                    aria-valuemin="0" aria-valuemax="128">
+                                </div>
+                            </div>
+                            <div style="font-size: 10px;text-align: center;"> {{this.percentage}}%</div>
+                            <div style="font-size: 10px;text-align: center;font-size: 14px;">
+                                Finished</div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

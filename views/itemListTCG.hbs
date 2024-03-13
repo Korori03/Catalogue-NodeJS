@@ -1,0 +1,107 @@
+<div class="content_50">
+<input type="hidden" value="{{pageObject}}" name="objectType" id="objectType" />
+
+    <div class="clear"></div>
+</div>
+
+<div class="content_50">
+    <button class="btnGreyBorder back_form shadow_box " style="width: 49%;float:left">Member Collections</button>
+    <button class="btnGreyBorder back_form shadow_box btnSearch" style="width: 49%;float:right">Search Options</button>
+</div>
+<div class="clear"></div>
+<div style="display: none;" class="search_box" id="search_box">
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Platform</h5>
+            <select aria-label="Sections" style="width: 100%;" name="search_section" autocomplete="off"
+                class="form_select back_form">
+                {{{searchOptions}}}
+            </select>
+            <h5 class="left">Sort By</h5>
+            <select class="form_select back_form" style="width: 100%;">
+                <option value="name">Name</option>
+                <option value="comp">Finished</option>
+                <option value="averagea">Region</option>
+                <option value="release">Release Date</option>
+            </select>
+        </div>
+    </div>
+    <div class="content_50 back_secondary shadow_box">
+        <div class="in">
+            <h5 class="left">Genre</h5>
+            <!--Genre-->
+            <select name="search_genre" style="width: 100%;" class="form_select back_form">
+                <option value="">All</option>
+                {{#each searchGenre}}
+                <option value="{{ucwords this.genre}}">{{ucwords this.genre}}</option>
+                {{/each}}
+            </select>
+
+            <!--END OF GENRE-->
+            <div class="clear"></div>
+            <h5 class="left">Release Year</h5>
+            <select name="search_year" style="width: 100%;" class="form_select back_form form_select back_form"
+                data-form-type="date,year">
+                <option value="">All </option>
+                {{#each searchYears}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<style>
+.Card_List_Item {
+    padding: 0 0;
+}
+.Card_List_Item {
+    vertical-align: top;
+}
+  
+</style>
+<div class="content_100 back_form shadow_box">
+    <div class="in">
+        <div class="search_list">
+            <ul>
+                {{#each data}}
+                <li class="back_darkish Card"
+                    style="background-image: linear-gradient(rgb(31, 31, 31), rgba(31, 31, 31, 0.85)), url(&quot/img/backimg.png&quot;);">
+                    <div class="Card_Blur">
+                        <div class="Card_Details" style="margin-left: 0px;">
+                            <h3>
+                                <a class="text_white" title="Games Grand Total" href="#">{{this.card_number}} -
+                                    {{this.name}}</a>
+                            </h3>
+                            <div class="Card_Detail_Block">
+                                <div class="Card_List_Item text_white shadow_text" style="width: 150px;">
+                                    <div style="margin-top: 10px;">
+                                        <img src="{{this.image}}" style="width:150px;" />
+                                    </div>
+                                </div>
+                                <div class="Card_List_Item text_white shadow_text" style="width: 200px;margin-top: 10px;">
+                                <div>
+                                    <input data-cid="{{{this.cid}}}" data-card="{{{this.cardid}}}" data-set="{{{this.setid}}}" type="checkbox" id="regular_{{{this.cid}}}" name="regular_{{{this.cid}}}" {{{checker this.own}}} />
+                                    <label for="regular_{{{this.cid}}}" style="float:unset;">Regular</label>
+                                </div>
+                                <br />
+                                {{#each this.variants}}
+                                <div>
+                                    <input data-cid="{{{this.cid}}}" data-card="{{{this.cardid}}}" data-set="{{{this.setid}}}" type="checkbox" id="variant_{{{this.cid}}}" name="variant_{{{this.cid}}}" {{{checker this.own}}} />
+                                    <label for="variant_{{{this.cid}}}" style="float:unset;">{{this.name}}</label>
+                                </div>
+                                <br />
+                                {{/each}}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
